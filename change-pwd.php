@@ -91,7 +91,9 @@ Uses the excellent form validation script from JavaScript-coder.com-->
 </script>
 
 <p>
-<a href='login.php'>Home</a>
+<a href='<?php 
+$home = $bcfvolunteers->GetHomePage();
+echo $home; ?>'>Home</a>
 </p>
 
 </div>
