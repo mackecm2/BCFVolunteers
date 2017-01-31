@@ -52,9 +52,8 @@ choice1 AS 'choice1',
 choice2 AS 'choice2', 
 other AS 'Notes', 
 date_added AS 'comments', 
-address2 AS 'Address2'  FROM `BeerFestVolunteers`";
+address2 AS 'Address2'  FROM `beerfestvolunteers`";
 
-//$sql = mysqli_query($con,"SELECT * FROM BeerFestVolunteers");
 $sql = mysqli_query($con,$sqltext);
 
 $output = "";

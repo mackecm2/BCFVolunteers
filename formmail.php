@@ -37,10 +37,10 @@ $datafields = array_keys($data_array);
 $dayfields = array_keys($days_array);
 $ucfields = array('name1', 'name2', 'address1', 'address2', 'town', 'county');
 
-$sql = "INSERT INTO BeerFestVolunteers (";
+$sql = "INSERT INTO beerfestvolunteers (";
 $sqlvals = "VALUES ( ";
 
-$query = "SELECT * FROM BeerFestVolunteers WHERE name1 LIKE '$_POST[name1]' AND name2 LIKE '$_POST[name2]'";
+$query = "SELECT * FROM beerfestvolunteers WHERE name1 LIKE '$_POST[name1]' AND name2 LIKE '$_POST[name2]'";
 $results = mysqli_query($conn, $query);
 $numResults = mysqli_num_rows($results);
 if ($numResults > 0) {

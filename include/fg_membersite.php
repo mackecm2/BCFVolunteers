@@ -12,7 +12,7 @@ class BCFVolunteers
 {
     var $admin_email;
     var $sitename;
-var $home_page;
+    var $home_page;
     var $from_address;
     var $from_name;
     var $username;
@@ -54,7 +54,7 @@ var $home_page;
     {
         $this->sitename = $sitename;
     }
-
+    
     function SetHomePage($home_page)
     {
         $this->home_page = $home_page;
@@ -340,7 +340,7 @@ var $home_page;
         $from ="camra@$host";
         return $from;
     }
-	
+    
     function GetHomePage()
     {
         if(!empty($this->home_page))
@@ -351,7 +351,7 @@ var $home_page;
        $homepage ="volunteers.php";
        return $homepage;
     }
-	
+    
     function GetFromName()
     {
         if(!empty($this->from_name))

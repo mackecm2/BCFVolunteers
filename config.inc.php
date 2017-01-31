@@ -8,6 +8,7 @@ $festival_start_date = "05-10-2017";
 $admin_email = 'camra@scruntlehawk.com';
 $website_name = 'Bedford Beer & Cider Festival Database';
 $from_name = 'North Beds CAMRA';
+$home_page = 'volunteers.php';
 $data_array = array("id"=>"ID", 
                     "name1"=>"First Name",
                     "name2"=>"Last Name", 

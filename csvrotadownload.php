@@ -26,7 +26,7 @@ COUNT( IF( Fri1 = 'Y', 1, NULL ) ) as Fri1Count, COUNT( IF( Fri2 = 'Y', 1, NULL 
 COUNT( IF( Fri3 = 'Y', 1, NULL ) ) as Fri3Count, COUNT( IF( Sat1 = 'Y', 1, NULL ) ) as Sat1Count,
 COUNT( IF( Sat2 = 'Y', 1, NULL ) ) as Sat2Count, COUNT( IF( Sat3 = 'Y', 1, NULL ) ) as Sat3Count,
 COUNT( IF( Sun21 = 'Y', 1, NULL ) ) as Sun21Count,
-COUNT( IF( Sun22 = 'Y', 1, NULL ) ) as Sun22Count FROM  `BeerFestVolunteers`
+COUNT( IF( Sun22 = 'Y', 1, NULL ) ) as Sun22Count FROM  `beerfestvolunteers`
 GROUP BY choice1";
 
 $sql = mysqli_query($con,$sqltext);

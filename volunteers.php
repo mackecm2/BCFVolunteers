@@ -25,16 +25,23 @@ if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-$result = mysqli_query($con,"SELECT *,date_added AS date_registered FROM BeerFestVolunteers");
-$row_cnt = mysqli_num_rows($result);
+if ($result = mysqli_query($con,"SELECT *,date_added AS date_registered FROM beerfestvolunteers")) {
+    $row_cnt = mysqli_num_rows($result);
+} else {
+    $row_cnt = 0;
+}
+
+
 
 // print out count and logout button at the top
 echo "<div class='divTableHeadRow'>";
 echo "<div class='divTableHead'>" . "<span style=\"background-color: #FFFF00\">Number of Volunteers so far: $row_cnt </span>" . "</div>";
+echo "<div class='divTableHead'>" . "Change Password
+    <form action=\"change-pwd.php\" method=\"post\"><input type=\"image\" src=\"images/general/change-pwd-button.png\" name=\"submit\"></form>
+        " . "</div>";
 echo "<div class='divTableHead'>" . "Logout
     <form action=\"logout.php\" method=\"post\"><input type=\"image\" src=\"images/general/logout-button.png\" name=\"submit\"></form>
         " . "</div>";
-
 echo "</div>";
 echo "<br />";
 echo "<div class='divTableHeadRow'>";
@@ -55,28 +62,31 @@ echo "<div class='divTableHead'>Date Added</div>
 $dayfields = array_keys($days_array);
 $total = array_fill_keys($dayfields,0);
 
-while($row = mysqli_fetch_array($result)) {
-    if (array_key_exists('phone', $data_array)) {
-        $row['phone'] = (preg_match('/\s/',$row['phone']) > 0) ? $row['phone'] : substr_replace($row['phone']," ", 5, -strlen($row['phone']));
-    }
-    
-    echo "<div class='divTableRow'>";
-    
-    // print out the volunteer data
-    foreach($data_array as $label => $title) {
-        echo "<div class='divTableCell'>" . $row[$label] . "</div>";
-    }
+if ($row_cnt > 0) {
+    while($row = mysqli_fetch_array($result)) {
+        if (array_key_exists('phone', $data_array)) {
+            $row['phone'] = (preg_match('/\s/',$row['phone']) > 0) ? $row['phone'] : substr_replace($row['phone']," ", 5, -strlen($row['phone']));
+        }
 
-    // print out the timeslots they've volunteered for
-    foreach($dayfields as $field)
-    {
-      echo "<div class='divTableCell'>" . $row[$field] . "</div>";
-      if ($row[$field] == "Y") { $total[$field]++; } 
-    }
+        echo "<div class='divTableRow'>";
 
-    echo "<div class='divTableCell'>" . $row['date_registered'] . "</div>";
-    echo "</div>";
+        // print out the volunteer data
+        foreach($data_array as $label => $title) {
+            echo "<div class='divTableCell'>" . $row[$label] . "</div>";
+        }
+
+        // print out the timeslots they've volunteered for
+        foreach($dayfields as $field)
+        {
+          echo "<div class='divTableCell'>" . $row[$field] . "</div>";
+          if ($row[$field] == "Y") { $total[$field]++; } 
+        }
+
+        echo "<div class='divTableCell'>" . $row['date_registered'] . "</div>";
+        echo "</div>";
+    }
 }
+
 
 echo "<div class='divTableHeadRow'>";
 // print out the data titles (name, address, etc)
