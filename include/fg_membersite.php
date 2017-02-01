@@ -505,11 +505,12 @@ class BCFVolunteers
 
 	# send via SMTP
 	$mail->IsSendmail();
-	$mail->Host = 'mail.scruntlehawk.com';
+	#$mail->Host = 'mail.scruntlehawk.com';
+        $mail->Host = 'plesk.camra.org.uk';
         $mail->CharSet = 'utf-8';
 	$mail->FromName	= 'Bedford Beer & Cider Festival';  
-	$mail->From	= 'camra@scruntlehawk.com'; 
-	$mail->Sender =	'camra@scruntlehawk.com'; // the envelope sender(server) of the email for undeliverable mail
+	$mail->From	= 'beerfestival@northbeds.camra.org.uk'; 
+	$mail->Sender =	'beerfestival@northbeds.camra.org.uk'; // the envelope sender(server) of the email for undeliverable mail
 	
 	$mail->AddAddress('mike@scruntlehawk.com','Bedford Beer Festival Office Manager'); 
 #        $mail->AddAddress('beerfestival@northbedscamra.org.uk','Bedford Beer Festival Organiser'); 
