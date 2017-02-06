@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Bedford Beer Festival Staffing Form 2012</title>
+<title>Bedford Beer Festival Staffing Form</title>
 <meta http-equiv="Content-Type" content="text/html;">
 <!-- Fireworks MX Dreamweaver MX target.  Created Fri Mar 18 11:28:57 GMT+0000 (GMT Standard Time) 2011-->
 <script language="JavaScript">
@@ -26,10 +26,10 @@ function MM_preloadImages() { //v3.0
    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
 }
 
-function MM_validateForm() { //v4.0
+function MM_validateForm() { //v4.1
   var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
   for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=MM_findObj(args[i]);
-    if (val) { nm=val.name; if ((val=val.value)!="") {
+    if (val) { nm=val.name; id=val.id; if ((val=val.value)!="") {
       if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
         if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
       } else if (test!='R') { num = parseFloat(val);
@@ -37,9 +37,10 @@ function MM_validateForm() { //v4.0
         if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
           min=test.substring(8,p); max=test.substring(p+1);
           if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
-    } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+    } } } else if (test.charAt(0) == 'R') errors += '- '+id+' is required.\n'; }
   } if (errors) alert('The following error(s) occurred:\n'+errors);
   document.MM_returnValue = (errors == '');
+
 }
 //-->
 </script>
@@ -47,88 +48,89 @@ function MM_validateForm() { //v4.0
     </SCRIPT>
 
 </head>
-<body bgcolor="#ffffff" onLoad="MM_preloadImages('http://www.northbedscamra.org.uk/navigation/homebtn_f2.gif','http://www.northbedscamra.org.uk/navigation/newsbtn_f2.gif','http://www.northbedscamra.org.uk/navigation/membbtn_f2.gif','http://www.northbedscamra.org.uk/navigation/diarybtn_f2.gif','http://www.northbedscamra.org.uk/navigation/pubsbtn_f2.gif','http://www.northbedscamra.org.uk/navigation/festivalsbtn_f2.gif','http://www.northbedscamra.org.uk/navigation/contactbtn_f2.gif');">
+<body bgcolor="#ffffff" onLoad="MM_preloadImages('navigation/homebtn_f2.gif','navigation/newsbtn_f2.gif','navigation/membbtn_f2.gif','navigation/diarybtn_f2.gif','navigation/pubsbtn_f2.gif','navigation/festivalsbtn_f2.gif','navigation/contactbtn_f2.gif');">
 <center><table border="0" cellpadding="0" cellspacing="0" width="844">
   <!--DWLayoutTable-->
 <!-- fwtable fwsrc="template.png" fwbase="index.gif" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="1" -->
   <tr>
-   <td height="104" colspan="4" valign="top"><img src="http://www.northbedscamra.org.uk/navigation/logo.gif" alt="North Beds CAMRA logo" name="logo" width="844" height="104" border="0" usemap="#logoMap"></td>
+   <td height="104" colspan="7" valign="top"><img src="navigation/logo.gif" alt="North Beds CAMRA logo" name="logo" width="844" height="104" border="0" usemap="#logoMap"></td>
   </tr>
   <tr>
-   <td height="36" colspan="4" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="844">
+   <td height="36" colspan="7" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="844">
         <!--DWLayoutTable-->
         <tr>
-          <td width="98"><a href="http://www.camra.org.uk" target="_blank"><img name="leftnav" src="http://www.northbedscamra.org.uk/navigation/leftnav.gif" width="98" height="36" border="0" alt="Link to CAMRA2"></a></td>
-          <td width="83"><a href="http://www.northbedscamra.org.uk/index.htm" target="_self" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('homebtn','','http://www.northbedscamra.org.uk/navigation/homebtn_f2.gif',1);"><img name="homebtn" src="http://www.northbedscamra.org.uk/navigation/homebtn.gif" width="83" height="36" border="0" alt="Home Page"></a></td>
-          <td width="75"><a href="http://www.northbedscamra.org.uk/news.htm" target="_self" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('newsbtn','','http://www.northbedscamra.org.uk/navigation/newsbtn_f2.gif',1);"><img name="newsbtn" src="http://www.northbedscamra.org.uk/navigation/newsbtn.gif" width="75" height="36" border="0" alt="newsbtn"></a></td>
-          <td width="128"><a href="http://www.northbedscamra.org.uk/membership.htm" target="_self" onMouseOver="MM_swapImage('membbtn','','http://www.northbedscamra.org.uk/navigation/membbtn_f2.gif',1);" onMouseOut="MM_swapImgRestore()"><img name="membbtn" src="http://www.northbedscamra.org.uk/navigation/membbtn.gif" width="128" height="36" border="0" alt="membbtn"></a></td>
-          <td width="81"><a href="http://www.northbedscamra.org.uk/diary.htm" target="_self" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('diarybtn','','http://www.northbedscamra.org.uk/navigation/diarybtn_f2.gif',1);"><img name="diarybtn" src="http://www.northbedscamra.org.uk/navigation/diarybtn.gif" width="81" height="36" border="0" alt="diarybtn"></a></td>
-          <td width="77"><a href="http://www.northbedscamra.org.uk/pubs.htm" target="_self" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('pubsbtn','','http://www.northbedscamra.org.uk/navigation/pubsbtn_f2.gif',1);"><img name="pubsbtn" src="http://www.northbedscamra.org.uk/navigation/pubsbtn.gif" width="77" height="36" border="0" alt="pubsbtn"></a></td>
-          <td width="98"><a href="http://www.northbedscamra.org.uk/festivals.htm" target="_self" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('festivalsbtn','','http://www.northbedscamra.org.uk/navigation/festivalsbtn_f2.gif',1);"><img name="festivalsbtn" src="http://www.northbedscamra.org.uk/navigation/festivalsbtn.gif" width="98" height="36" border="0" alt="festivalsbtn"></a></td>
-          <td width="119"><a href="http://www.northbedscamra.org.uk/contactus.htm" target="_self" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('contactbtn','','http://www.northbedscamra.org.uk/navigation/contactbtn_f2.gif',1);"><img name="contactbtn" src="http://www.northbedscamra.org.uk/navigation/contactbtn.gif" width="119" height="36" border="0" alt="contactbtn"></a></td>
-          <td width="85"><img name="rightnav" src="http://www.northbedscamra.org.uk/navigation/rightnav.gif" width="85" height="36" border="0" alt=""></td>
+          <td width="98"><a href="http://www.camra.org.uk" target="_blank"><img name="leftnav" src="navigation/leftnav.gif" width="98" height="36" border="0" alt="Link to CAMRA2"></a></td>
+          <td width="83"><a href="index.htm" target="_self" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('homebtn','','navigation/homebtn_f2.gif',1);"><img name="homebtn" src="navigation/homebtn.gif" width="83" height="36" border="0" alt="Home Page"></a></td>
+          <td width="75"><a href="news.htm" target="_self" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('newsbtn','','navigation/newsbtn_f2.gif',1);"><img name="newsbtn" src="navigation/newsbtn.gif" width="75" height="36" border="0" alt="newsbtn"></a></td>
+          <td width="128"><a href="cider.htm" target="_self" onMouseOver="MM_swapImage('membbtn','','navigation/membbtn_f2.gif',1);" onMouseOut="MM_swapImgRestore()"><img name="membbtn" src="navigation/membbtn.gif" width="128" height="36" border="0" alt="membbtn"></a></td>
+          <td width="81"><a href="index.htm" target="_self" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('diarybtn','','navigation/diarybtn_f2.gif',1);"><img name="diarybtn" src="navigation/diarybtn.gif" width="81" height="36" border="0" alt="diarybtn"></a></td>
+          <td width="77"><a href="pubs.htm" target="_self" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('pubsbtn','','navigation/pubsbtn_f2.gif',1);"><img name="pubsbtn" src="navigation/pubsbtn.gif" width="77" height="36" border="0" alt="pubsbtn"></a></td>
+          <td width="98"><a href="festivals.htm" target="_self" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('festivalsbtn','','navigation/festivalsbtn_f2.gif',1);"><img name="festivalsbtn" src="navigation/festivalsbtn.gif" width="98" height="36" border="0" alt="festivalsbtn"></a></td>
+          <td width="119"><a href="contactus.htm" target="_self" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('contactbtn','','navigation/contactbtn_f2.gif',1);"><img name="contactbtn" src="navigation/contactbtn.gif" width="119" height="36" border="0" alt="contactbtn"></a></td>
+          <td width="85"><img name="rightnav" src="navigation/rightnav.gif" width="85" height="36" border="0" alt=""></td>
         </tr>
            </table>
    </td>
   </tr>
   <tr>
-   <td height="27" colspan="4" valign="top"><img name="topborder" src="http://www.northbedscamra.org.uk/navigation/topborder.gif" width="844" height="27" border="0" alt=""></td>
+   <td height="27" colspan="7" valign="top"><img name="topborder" src="navigation/topborder.gif" width="844" height="27" border="0" alt=""></td>
   </tr>
   <tr>
-   <td height="42" colspan="4" align="center" valign="top" bgcolor="#FFFFFF">  <div align="center"><font color="#003366" size="4" face="Verdana, Arial, Helvetica, sans-serif"><strong><img src="http://www.northbedscamra.org.uk/navigation/bbf%20title.gif" width="448" height="42"></strong></font></div>
+   <td height="42" colspan="7" align="center" valign="top" bgcolor="#FFFFFF">  <div align="center"><font color="#003366" size="4" face="Verdana, Arial, Helvetica, sans-serif"><strong><img src="navigation/bbf%20title.gif" width="448" height="42"></strong></font></div>
    </td>
   </tr>
   <tr>
-    <td height="52" colspan="4" align="center" valign="top"><p><br>
+    <td height="114" colspan="7" align="center" valign="top"><p><br>
         <font color="#003399" size="4" face="Verdana, Arial, Helvetica, sans-serif"><strong><font color="#006666">STAFFING
-            FORM</font></strong></font><font color="#006666" size="4" face="Verdana, Arial, Helvetica, sans-serif"><strong>            2014</strong></font><font color="#0000FF" size="4" face="Verdana, Arial, Helvetica, sans-serif"><strong><br>
-            </strong></font><strong><font color="#FF0000" size="4" face="Verdana, Arial, Helvetica, sans-serif"><font size="2">Note:
-            </font></font>
-	<font color="#FF0000" size="2" face="Verdana, Arial, Helvetica, sans-serif">
-	We will store your details on our secure database,</font><font color="#FF0000" size="4" face="Verdana, Arial, Helvetica, sans-serif"><br>
-            <font size="2">            which will be deleted at the end of the 
-	festival.<br>
-	Your details are
-            sent by email to the staffing officer</font>.<br>
-            <br>
-            </font>
-            </strong></p>
+            FORM</font></strong></font><font color="#006666" size="4" face="Verdana, Arial, Helvetica, sans-serif"><strong>            2017</strong></font><font color="#0000FF" size="4" face="Verdana, Arial, Helvetica, sans-serif"><strong><br>
+            </strong></font><font color="#FF0000" size="4" face="Verdana, Arial, Helvetica, sans-serif"><strong><font size="2">Note: We
+            will store your details on our secure database<br>
+            which
+            will be deleted at the end of the festival<br>
+            </font><br>
+            </strong></font></p>
     </td>
   </tr>
   <tr>
-    <td width="377" rowspan="5" align="right" valign="middle"><p align="center"><font color="#006666" size="3" face="Verdana, Arial, Helvetica, sans-serif"><strong>37th
-            Bedford Beer
-      &amp; Cider Festival</strong></font></p>
-      <p align="center"><strong><font color="#006633" size="2" face="Verdana, Arial, Helvetica, sans-serif">Wednesday
-      8th to Saturday 11th October 2014</font></strong></p>
-      <p align="center"><strong><font color="#006666" size="2" face="Verdana, Arial, Helvetica, sans-serif">Corn Exchange Bedford</font></strong></p></td>
-          <td width="370" height="42" align="center" valign="middle"><p><font color="#000000" size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Dates</strong></font></p>
-    </td>
-    <td width="96" rowspan="5" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
-    <td width="68" rowspan="5" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="47" rowspan="5" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+          <td width="390" rowspan="5" align="right" valign="middle"><p align="center"><font color="#006666" size="3" face="Verdana, Arial, Helvetica, sans-serif"><strong>40th
+            Bedford Beer<br>
+      &amp; Cider Festival</strong></font></p>            <p align="center"><strong><font color="#006633" size="2" face="Verdana, Arial, Helvetica, sans-serif">Wednesday
+        4th to Saturday<br> 
+        7th October 2017</font></strong></p>            <p align="center"><strong><font color="#006666" size="2" face="Verdana, Arial, Helvetica, sans-serif">Corn Exchange Bedford</font></strong></p>
+          </td>
+          <td width="80" rowspan="5" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+          <td width="1" height="42">&nbsp;</td>
+          <td width="1">&nbsp;</td>
+          <td width="448" align="center" valign="middle"><p><font color="#000000" size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Dates</strong></font></p>
+          </td>
+    <td width="47" rowspan="5" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
   </tr>
   <tr>
-    <td height="44" align="center" valign="middle" bgcolor="#99FFFF"><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">SETTING
+    <td height="44">&nbsp;</td>
+    <td colspan="2" align="center" valign="middle" bgcolor="#99FFFF"><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">SETTING
                 UP:-<br>
-Sunday 5th October - Wed 8th October 2014</font></strong></td>
+Sunday 1st October - Tues 3rd October 2017</font></strong></td>
   </tr>
   <tr>
-    <td height="42" align="center" valign="middle" bgcolor="#FFCC99"><p align="center">              <strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">OPEN SESSIONS:- <br>
-        9th to 11th October
-              2014<br>
+    <td height="42" colspan="3" align="center" valign="middle" bgcolor="#FFCC99"><p align="center">              <strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">OPEN SESSIONS:- <br>
+        4th to 7th October
+              2017<br>
     </font></strong></p>
     </td>
   </tr>
   <tr>
     <td height="2"></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
-    <td height="72" align="center" valign="middle" bgcolor="#003399"><strong><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif">TAKING
+    <td height="72" colspan="3" align="center" valign="middle" bgcolor="#003399"><strong><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif">TAKING
                 DOWN:-<br>
-Sunday 12th October 2014</font></strong></td>
+Sunday 8th October 2017</font></strong></td>
   </tr>
   <tr>
-    <td height="733" colspan="3" valign="top"><form action="formmail.php" method="post" name="staff_form" id="staff_form" onSubmit="MM_validateForm('postcode','','R','email','','R');return document.MM_returnValue">
+    <td height="877" colspan="6" valign="top"><form action="formmail.php" method="post" name="staff_form" id="staff_form" onSubmit="MM_validateForm('postcode','','R','email','','R','memno','','R');return document.MM_returnValue">
         <h3 align="center">&nbsp;</h3>
         <div align="center">
           <table width="92%" border="1">
@@ -165,9 +167,9 @@ Sunday 12th October 2014</font></strong></td>
             </tr>
             <tr bgcolor="#99FF99">
               <td><p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Membership No.</font></p></td>
-              <td><input name="memno" type="text" id="memno"></td>
-              <td colspan="4"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">(CAMRA
-                  memberhip number - if applicable)</font></td>
+              <td><input name="memno" type="text" id="CAMRA Membership Number"></td>
+              <td colspan="4"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">CAMRA
+                  memberhip number - now MANDATORY for insurance reasons</font></td>
             </tr>
           </table>
         </div>
@@ -352,6 +354,7 @@ Sunday 12th October 2014</font></strong></td>
                     <option>Cider Bar
                     <option>Foreign Beer Bar
                     <option>Steward/Admission
+                    <option>Wine Bar</option>
                     <option>Other
                   </select>
                 </font></p>
@@ -369,6 +372,7 @@ Sunday 12th October 2014</font></strong></td>
                     <option>Foreign Beer Bar
                     <option>Steward/Admission
                       
+                    <option>WIne Bar</option>
                   </select>
                 </font></p>
             </div></td>
@@ -404,6 +408,9 @@ Sunday 12th October 2014</font></strong></td>
   </tr>
   <tr>
     <td height="0"></td>
+    <td></td>
+    <td></td>
+    <td></td>
     <td></td>
     <td></td>
     <td></td>

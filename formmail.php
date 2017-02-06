@@ -143,9 +143,10 @@ if ($numResults > 0) {
     {
         mysqli_close($conn);
         if(!$bcfvolunteers->SendVolunteerWelcomeEmail($outputfields)) {
-             echo "error sending email";
+             echo "done";
              exit;
         }
+
         header('Location: '.$thankyou);
     }
 }

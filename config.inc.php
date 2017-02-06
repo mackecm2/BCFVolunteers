@@ -3,10 +3,11 @@ $dbhost = 'localhost';
 $dbuser = 'MikeM';
 $dbpass = 'Mus50b&5';
 $dbname = 'northbedscamra_';
+$mail_host = 'plesk.camra.org.uk';
 $thankyou = 'http://northbeds.camra.org.uk/bbfthankyou.html';
 $festival_start_date = "05-10-2017";
 $admin_email = 'beerfestival@northbeds.camra.org.uk';
-$website_name = 'Bedford Beer & Cider Festival Database';
+$festival_name = 'Bedford Beer & Cider Festival';
 $from_name = 'North Beds CAMRA';
 $home_page = 'volunteers.php';
 $data_array = array("id"=>"ID", 

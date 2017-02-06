@@ -50,9 +50,14 @@ class BCFVolunteers
         $this->from_name = $from_name;
     }
     
-    function SetWebsiteName($sitename)
+    function SetMailHost($mail_host)
     {
-        $this->sitename = $sitename;
+        $this->mail_host = $mail_host;
+    }
+    
+    function SetFestivalName($festival_name)
+    {
+        $this->festival_name = $festival_name;
     }
     
     function SetHomePage($home_page)
@@ -358,9 +363,34 @@ class BCFVolunteers
         {
             return $this->from_name;
         }
-
-        $from ="Bedford Beer & Cider Festival";
-        return $from;
+        return false;
+    }
+    
+    function GetMailHost()
+    {
+        if(!empty($this->mail_host))
+        {
+            return $this->mail_host;
+        }
+        return false;
+    }
+    
+    function GetAdminEmail()
+    {
+        if(!empty($this->admin_email))
+        {
+            return $this->admin_email;
+        }
+        return false;
+    }
+    
+    function GetFestivalName()
+    {
+        if(!empty($this->festival_name))
+        {
+            return $this->festival_name;
+        }
+        return false;
     }
     
     function GetLoginSessionVar()
@@ -501,36 +531,39 @@ class BCFVolunteers
     
     function SendVolunteerWelcomeEmail(&$volunteer)
     {  
-	$mail = new PHPMailer();
+	$mailer = new PHPMailer();
 
 	# send via SMTP
-	$mail->IsSendmail();
-	#$mail->Host = 'mail.scruntlehawk.com';
-        $mail->Host = 'plesk.camra.org.uk';
-        $mail->CharSet = 'utf-8';
-	$mail->FromName	= 'Bedford Beer & Cider Festival';  
-	$mail->From	= 'beerfestival@northbeds.camra.org.uk'; 
-	$mail->Sender =	'beerfestival@northbeds.camra.org.uk'; // the envelope sender(server) of the email for undeliverable mail
+	$mailer->IsSendmail();
+	$mailer->Host = $this->GetMailHost();
+        $mailer->CharSet = 'utf-8';
+        $mailer->FromName = $this->GetFromName();
+        $mailer->From	= $this->GetAdminEmail(); 
+	$mailer->Sender = $this->GetAdminEmail(); // the envelope sender(server) of the email for undeliverable mail
 	
-	$mail->AddAddress('mike@scruntlehawk.com','Bedford Beer Festival Office Manager'); 
-#        $mail->AddAddress('beerfestival@northbedscamra.org.uk','Bedford Beer Festival Organiser'); 
+        $festival_name = $this->GetFestivalName();
+        echo $festival_name;
+        echo "...";
+        
+        // Anybody want to be on the cc list for volunteer registrations? Add them here
+	$mailer->AddCC('mike@scruntlehawk.com','Bedford Beer Festival Office Manager'); 
         if ($volunteer['choice1'] == "Steward/Admission" || $volunteer['choice2'] == "Steward/Admission") {
-            $mail->AddAddress('unikorn1312@yahoo.co.uk','Katharine Lilley'); 
-            $mail->AddAddress('kitdavies4@yahoo.com','Kit Davies');
+            $mailer->AddCC('unikorn1312@yahoo.co.uk','Katharine Lilley'); 
+            $mailer->AddCC('kitdavies4@yahoo.com','Kit Davies');
         }
         
         $email = filter_var($volunteer['email'], FILTER_SANITIZE_EMAIL);
 
 	// Validate e-mail
 	if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-            $mail->AddAddress($email,'Bedford Beer Festival Volunteer');
+            $mailer->AddAddress($email,$festival_name.' Volunteer');
         }
  
-	$mail->WordWrap = 50; 
-	$mail->IsHTML(true); 
+	$mailer->WordWrap = 50; 
+	$mailer->IsHTML(true); 
 
-	$mail->Subject  =  $volunteer['name1']." ".$volunteer['name2']. " has volunteered"; 
-	$mail->Body     =  "The following Volunteer Form has been received and stored in the Bedford Beer and Cider Festival Database :-<br><br>"; 	
+	$mailer->Subject  =  $volunteer['name1']." ".$volunteer['name2']. " has volunteered"; 
+	$mailer->Body     =  "The following Volunteer Form has been received and stored in the ".$festival_name." Database :-<br><br>"; 	
        
 	foreach($volunteer as $key=>$field)
 	{	
@@ -602,14 +635,14 @@ class BCFVolunteers
 	
             if($field != "N" && $field != "")	
             {
-                $mail->Body .= $label." - ".$field."<br />"		;
+                $mailer->Body .= $label." - ".$field."<br />"		;
             }
 	}
 	
-        $mail->Body .= "<br /><br />Regards,<br />".
-        "The Bedford Beer & Cider Festival Management Team<br />";
+        $mailer->Body .= "<br /><br />Regards,<br />".
+        "The ".$festival_name." Management Team<br />";
         
-	if(!$mail->Send())
+	if(!$mailer->Send())
         {
             return false;
         }
@@ -626,13 +659,9 @@ class BCFVolunteers
             return false;
         }
         $mailer = new PHPMailer();
-        
         $mailer->CharSet = 'utf-8';
-        
         $mailer->AddAddress($this->admin_email);
-        
         $mailer->Subject = "Registration Completed: ".$user_rec['name'];
-
         $mailer->From = $this->GetFromAddress();         
         $mailer->FromName = $this->GetFromName();
         $mailer->Body ="A new user registered at ".$this->sitename."\r\n".
